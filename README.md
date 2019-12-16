@@ -1,44 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://github.com/hkcedricw/react-github-action-docker/workflows/react-in-docker/badge.svg
 
-## Available Scripts
+# An exmaple of using GitHub Action to push Docker image to GitHub Package
+The docker image is an Express server running a sample React App, bootstrapped with create-react-app --template typescript
 
-In the project directory, you can run:
+## Test the Express, React App
+1. `npm install` in app folder
+2. `npm install` in server folder
+3. `npm run dev` in server folder
 
-### `npm start`
+## Test Docker Image Building
+1. `npm install` in app folder
+2. `npm run build` in root folder
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A Docker Image `github-action-sample` will be built  
+check it by `docker image list`,  
+test run by `docker run -d -p 3000:3000 github-action-sample`, visit `localhost:3000`, the sample React page shows.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Note
+Instead of putting the Express and React App together, its seperated such that the node modules required for building the React App will not be included to the Docker Image.
 
-### `npm test`
+## Reference
+https://github.com/features/actions
+https://github.com/actions/starter-workflows/blob/master/ci/docker-push.yml
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

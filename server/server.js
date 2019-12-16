@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
+app.get("/diagnostic", (req, res) => {
+  res.send("alive");
+})
+
 app.listen(PORT, () => {
   console.log(`web app listening on port ${PORT}`);
 });
