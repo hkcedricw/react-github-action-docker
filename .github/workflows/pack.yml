@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: '12.x'
     - name: Move to React App folder
-      run: cd ../app
+      run: cd app
     - name: Build React App
       run: npm ci
     - name: Back to root
