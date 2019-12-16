@@ -29,7 +29,8 @@ jobs:
     - name: Push image
       run: |
         # Extract Image name from "name" of package.json
-        echo "::set-env name=IMAGE_NAME::$(jq -r '.name' package.json)"
+        IMAGE_NAME=$(jq -r '.name' package.json)
+        echo IMAGE_NAME=$IMAGE_NAME
         IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
         # Strip git ref prefix from version
         VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
