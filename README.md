@@ -16,11 +16,14 @@ A Docker Image `github-action-sample` will be built
 check it by `docker image list`,  
 test run by `docker run -d -p 3000:3000 github-action-sample`, visit `localhost:3000`, the sample React page shows.
 
+## GitHub Actions and GitHub Package
+`.githbu/workflows/pack.yaml` defines the GitHub Action for building and pushing the Docker Image to the Repository.
+
 ## Note
 Instead of putting the Express and React App together, its seperated such that the node modules required for building the React App will not be included to the Docker Image.
 
 ## Reference
-https://github.com/features/actions
+https://github.com/features/actions  
 https://github.com/actions/starter-workflows/blob/master/ci/docker-push.yml
 
 
