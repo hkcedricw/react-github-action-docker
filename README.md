@@ -1,4 +1,4 @@
-https://github.com/hkcedricw/react-github-action-docker/workflows/react-in-docker/badge.svg
+![](https://github.com/hkcedricw/react-github-action-docker/workflows/react-in-docker/badge.svg)
 
 # An exmaple of using GitHub Action to push Docker image to GitHub Package
 The docker image is an Express server running a sample React App, bootstrapped with create-react-app --template typescript
